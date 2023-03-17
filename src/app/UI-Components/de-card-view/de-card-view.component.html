@@ -1,0 +1,154 @@
+<mat-card class="de-mat-card" *ngIf="cardLayoutData">
+    <!-- Card Header -->
+    <mat-card-header class="de-mat-card-header"  *ngIf="cardLayoutData.cvHeader">
+        <mat-card-title class="de-mat-card-header-title" *ngIf="cardLayoutData.cvHeader.cvHeading"
+            [innerHTML]="cardLayoutData.cvHeader.cvHeading"></mat-card-title>
+            <!-- Card Sub Header -->
+        <mat-card-subtitle class="de-mat-card-header-subtitle de-text-muted de-text-italic"
+            *ngIf="cardLayoutData.cvHeader.cvSubHeading">{{cardLayoutData.cvHeader.cvSubHeading}}</mat-card-subtitle>
+        <button *ngIf="cardLayoutData.cvHeader.cvHelp" class="help-action" 
+            mat-icon-button><mat-icon>help_outline</mat-icon></button>
+        <button *ngIf="cardLayoutData.cvHeader.cvContextMenus" class="de-mat-card-header-context-menu" mat-icon-button
+            [matMenuTriggerFor]="headerContextMenu"
+            [ngStyle]="{'top':cardLayoutData.cvHeader.cvSubHeading ? '8px':'0'}" style="margin-left:370px; margin-top: -10px;">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+            <!-- HB button for menus-->
+        <mat-menu #headerContextMenu="matMenu">
+
+            <button mat-menu-item *ngFor="let eachMenu of cardLayoutData.cvHeader.cvContextMenus"
+                (click)="onSelectContextMenu(eachMenu.contextMenuType)">
+                <mat-icon>{{eachMenu.contextMenuIcon}}</mat-icon>
+                <span>{{eachMenu.contextMenuLabel}}</span>
+            </button>
+        </mat-menu>
+
+    </mat-card-header>
+
+    <!-- borderline -->
+
+    <mat-divider *ngIf="cardLayoutData.cvHeader"></mat-divider>
+
+
+    <div class="de-mat-card-head" *ngIf="headTemplateRef">
+        <ng-container *ngTemplateOutlet="headTemplateRef"></ng-container>
+    </div>
+
+    <!-- card content -->
+
+    <mat-card-content class="de-mat-card-content" *ngIf="contentTemplateREf">
+        <ng-container *ngTemplateOutlet="contentTemplateREf"></ng-container>
+    </mat-card-content>
+
+    <!-- borderline -->
+    <mat-divider *ngIf="cardLayoutData.cvFooter"></mat-divider>
+
+    <mat-card-footer class="de-mat-card-footer"  style="background-color: #283593" *ngIf="cardLayoutData.cvFooter">
+        <!-- Heading -->
+        <mat-card-title class="de-mat-card-footer-title" *ngIf="cardLayoutData.cvFooter.cvHeading"
+            [innerHTML]="cardLayoutData.cvHeader.cvHeading"></mat-card-title>
+
+        <!-- subheading -->
+        <mat-card-subtitle class="de-mat-card-footer-subtitle"
+            *ngIf="cardLayoutData.cvFooter.cvSubHeading">{{cardLayoutData.cvFooter.cvSubHeading}}</mat-card-subtitle>
+
+        <!-- HB  button for menu -->
+        <button *ngIf="cardLayoutData.cvFooter.cvContextMenus" class="de-mat-card-footer-context-menu" mat-icon-button
+            [matMenuTriggerFor]="footerContextMenu"
+            [ngStyle]="{'bottom':cardLayoutData.cvFooter.cvSubHeading ? '8px':'0'}">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <!-- panel of footer  -->
+        <div  class="footer-btn1" style="gap: 10px; margin: 2px 0px 0px 0px;">
+            <button *ngIf="cardLayoutData.cvFooter.cvActions" mat-raised-button color="accent" class="btnItem">basic
+                1</button>
+            <button *ngIf="cardLayoutData.cvFooter.cvActions" mat-raised-button color="accent" class="btnItem">basic
+                2</button>
+            <button *ngIf="cardLayoutData.cvFooter.cvActions" mat-raised-button color="accent" class="btnItem">basic
+                3</button>
+            <button *ngIf="cardLayoutData.cvFooter.cvActions" mat-raised-button color="accent" class="btnItem">basic
+                4</button>
+        </div>
+        <mat-menu #footerContextMenu="matMenu">
+            <button mat-menu-item *ngFor="let eachMenu of cardLayoutData.cvFooter.cvContextMenus"
+                (click)="onSelectContextMenu(eachMenu.contextMenuType)">
+                <mat-icon>{{eachMenu.contextMenuIcon}}</mat-icon>
+                <span>{{eachMenu.contextMenuLabel}}</span>
+            </button>
+        </mat-menu>
+    </mat-card-footer>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

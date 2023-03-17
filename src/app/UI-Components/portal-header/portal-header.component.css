@@ -1,0 +1,125 @@
+@import "../../../styles.css";
+
+.header{
+  height: 100%;
+  margin-left: -8px;
+}
+
+
+.side-nav-button{
+  display: contents;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.name {
+    margin-left: 10px;
+}
+
+.right-side {
+    margin-left: 1050px;
+}
+
+
+
+.example-container {
+    
+    top: 0;
+    bottom: 0;
+    white-space: normal;
+    left:0 ;
+    right: 0; 
+    overflow: hidden;
+    position: fixed;
+  }
+  
+  /* .example-events {
+    width: 300px;
+    height: 200px;
+    overflow: none;
+    border: 1px solid #555;
+  } */
+  
+  .sidebar-pannel{
+    width: 300px;
+    /* justify-content: start; */
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .sidebar-header{
+    background-color: rgb(40, 24, 3);
+    height: 100px;
+    width: 100%;
+  }
+
+  .grid-container{
+    display: grid;
+    gap: 20px;
+    margin-left: -170px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item mat-icon{
+   position: absolute;
+   
+}
+.item span{
+    margin-left: 150px;
+}
+
+.item span:hover{
+    margin-left: 160px;
+    color: blue;
+}
+
+
+mat-form-field {
+    height: 20px;
+}
+
+
+.search-bar{
+    margin-left: 16px;
+    margin-right: 8px;
+    transition: background-color 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+
+.seach-bar input{
+      width: 0;
+      max-width: 0;
+      padding: 0;
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 14px;
+      transition: max-width 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+
+
+  
+  body {
+    background: var(--bkg-color);
+  }
+  
+  h1,
+  p {
+    color: var(--text-color);
+  }
+
+   .dark-theme {
+    --text-color: #eee;
+    --bkg-color: #252222;
+    --btn-txt-color: rgb(46, 43, 43);
+    --btn-bg-color: rgb(20, 211, 195);
+  }
+

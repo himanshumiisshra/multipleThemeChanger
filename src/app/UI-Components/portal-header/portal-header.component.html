@@ -1,0 +1,61 @@
+<div class="header">
+    <mat-toolbar style="background-color: #283593">       
+        <div class="left-side">
+                
+                        <button  mat-icon-button class="side-nav-button" aria-label="Example icon-button with menu icon" (click)="sideNaveToggle()">
+                            <mat-icon >menu</mat-icon>
+                        </button>
+
+                        <button mat-icon-button class="example-icon" matTooltip="Turn ON/OFF Fullscreen" aria-label="Example icon-button with menu icon" (click)="toggleFullScreen()">
+                            <mat-icon >fullscreen</mat-icon>
+                        </button>
+
+                        
+                        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                            <mat-icon>search</mat-icon>
+                            <mat-form-field class="search-bar">
+                            <input layout="row" layout-align="end center" flex ng-model="searchTerms"  type="search" matInput  value="Search">
+                            </mat-form-field>
+                        </button>
+                      
+             
+        </div>
+
+        
+        <div class="right-side">          
+            <mat-slide-toggle class="example-icon" matTooltip="DARK THEME"  (change)="toggleDarkTheme()"></mat-slide-toggle>
+                  
+
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                    <mat-icon>{{netStatusIcon}}</mat-icon>
+                </button>
+                <app-menu [options]="options"
+                    [theme]="selectedTheme"
+                    (themeChange)="themeChangeHandler($event)">
+                </app-menu>
+
+
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                        <mat-icon>notification_important</mat-icon>
+                </button>
+
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="openDialog()">
+                        <mat-icon>settings</mat-icon>
+                </button>
+
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                        <mat-icon>account_circle</mat-icon>
+                </button>
+            
+        </div>
+
+         <span class="name">DigitalEdu</span>
+
+            
+  
+    </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>
+  
+    

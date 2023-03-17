@@ -1,0 +1,30 @@
+.grid-container {
+    position: fixed;
+    display: grid;
+    column-gap: 1%;
+    row-gap: 10px;
+    margin-top: 10px;
+    
+}
+
+.item1{
+    grid-row: 1 / span 1;
+    border: 1px solid rgb(0, 0, 0);
+  }
+  .item2{
+    grid-row: 1/ span 1;
+    border: 1px solid black;
+   
+  }
+  .item3{
+    grid-row: 1 / span 1;
+    border: 1px solid black;
+  }
+  .item4{
+    grid-row: 2 / span 2;
+    border: 1px solid black;
+  }
+  .item5{
+    grid-row: 2 / span 2;
+    border: 1px solid black;
+  }

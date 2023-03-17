@@ -1,0 +1,61 @@
+<div>
+<div id="wizard-tab-body">
+<div class="" *ngIf="instructionsData?.instrAbove?.instArr?.length>0" style="margin-bottom:24px;">
+    <h4 class="" style="margin:0">{{instructionsData.instrAbove.heading}}</h4>
+    <ol>
+      <li *ngFor="let eachInstr of instructionsData.instrAbove.instArr;let i=index" [ngClass]="instructionsData?.instrAbove.instrClass">{{eachInstr}}</li>
+    </ol>
+  </div>
+
+  <div>
+    <form [formGroup]="formDataObj">
+        <div class="uk-grid" fxLayout="row wrap">
+            <div
+            *ngFor="let eachElm of activeFormSchemaData" 
+            fxFlex="calc(100%/{{getLayoutGrid(eachElm,'def')}} - {{getLayoutGrid(eachElm,'def') * 6}}px)"
+            fxFlex.xl="calc(100%/{{getLayoutGrid(eachElm,'xl')}} - {{getLayoutGrid(eachElm,'xl') * 6}}px)"
+            fxFlex.md="calc(100%/{{getLayoutGrid(eachElm,'md')}} - {{getLayoutGrid(eachElm,'md') * 6}}px)"
+            fxFlex.lg="calc(100%/{{getLayoutGrid(eachElm,'lg')}} - {{getLayoutGrid(eachElm,'lg') * 6}}px)" 
+            fxFlex.sm="calc(100%/{{getLayoutGrid(eachElm,'sm')}} - {{getLayoutGrid(eachElm,'sm') * 6}}px)" 
+            fxFlex.xs="calc(100%/{{getLayoutGrid(eachElm,'xs')}} - {{getLayoutGrid(eachElm,'xs') * 6}}px)"
+            class="{{eachElm.layoutClass}}">
+
+<!-- ==================================TEXT FIELD ====================================================================================== -->
+
+            <div class="input-wrapper" *ngIf="eachElm.type==='text' || eachElm.type ==='number' || eachElm.type === 'email' || eachElm.type === 'password' || eachElm.type === 'time'">
+                <mat-form-field class="esample-full-width" appearance="outline">
+                    <mat-label>{{focusedField === eachElm.id ? (eachElm.altLabel ? eachElm.altLabel : eachElm.label) : eachElm.label}}</mat-label>
+                    <input matInput 
+                  [type]="eachElm.type" 
+                  [formControlName]="eachElm.id"
+                  (keypress)="applyReg($event,eachElm)" 
+                  (blur)="manipulateFieldValue(eachElm)"
+                  (focusin) = "onFocusInField(eachElm)"
+                  (focusout) = "onFocusOutField(eachElm)"
+                  [required]="eachElm.customValidators?.required ? true : false">
+                <mat-hint *ngIf="eachElm.errMsg">{{eachElm.errMsg}}</mat-hint>
+                </mat-form-field>
+                <div *ngIf="eachElm.instMsg" class="field-info-btn" mat-icon-button (click)="showInfoEditor(eachElm)"><mat-icon>info</mat-icon></div>
+            </div>
+
+            <!-- ===========================================FILE Field============================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </form>
+  </div>
+</div>
+</div>
